@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.3'
 
+gem 'carrierwave', '~> 1.0'
 gem 'devise'
 gem 'simple_form'
 gem 'country_select'
