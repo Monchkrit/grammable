@@ -133,8 +133,13 @@ end
       user = FactoryBot.create(:user)
         sign_in user
 
-      post :create, params: {gram: { message: 'Hello!' } }
-      expect(response).to redirect_to root_path
+        post :create, params: {
+          gram: { 
+            message: 'Hello!', 
+            image: fixture_file_upload("picture.png", 'image/png')
+          } 
+        }
+        expect(response).to redirect_to root_path
 
       gram = Gram.last
       expect(gram.message).to eq("Hello!")
