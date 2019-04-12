@@ -9,10 +9,6 @@ RSpec.describe GramsController, type: :controller do
       expect(response).to redirect_to new_user_session_path
     end
 
-    it "should do crazy stuff" do
-      expect(1).to eq '77'
-    end
-
     it "should allow a user to destroy a gram" do
       gram = FactoryBot.create(:gram)
       sign_in gram.user
